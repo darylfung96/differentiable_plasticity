@@ -30,7 +30,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes).astype(np.float32)
 
 plastic_net = PlasticNet(784, 50, 10, batch_size)
 hebb = plastic_net.initial_zero_hebb()
-hidden = plastic_net.initial_zero_state()
+hidden = plastic_net.initialhttps://github.com/darylfung96/differentiable_plasticity.git_zero_state()
 
 optimizer = Adam(plastic_net.parameters())
 total_iterations = x_train.shape[0] // batch_size
@@ -49,5 +49,3 @@ for _ in range(epochs):
 hebb = plastic_net.initial_zero_hebb()
 hidden = plastic_net.initial_zero_state()
 output = plastic_net(x_test[:batch_size], hidden, hebb)
-print(output)
-print(y_test)
